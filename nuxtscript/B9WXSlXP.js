@@ -1,1 +1,0 @@
-import{aC as n,aD as a}from"./cyCOdGck.js";const e={en:n,kr:a},t={en:"English",kr:"한국어"},o="en",g=Object.keys(e),c=[];g.map(s=>{c.push({idx:s,context:t[s]})});const l={legacy:!1,locale:o,warnHtmlInMessage:"off",messages:e};export{l as default,e as msg,g as msgLangList,o as msgOptDefault,c as msgOptList};
