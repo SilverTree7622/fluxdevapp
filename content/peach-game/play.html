@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<title>Peach Game</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+        <script type="text/javascript" src="utils/background.js"></script>
+        <script type="text/javascript" src="utils/platform.js"></script>
+        <script type="text/javascript" src="utils/monetize.js"></script>
+        <script type="text/javascript" src="utils/internet.js"></script>
+        <script type="text/javascript" src="utils/display.js"></script>
+		<div class="bg">
+			<div class="game-controls">
+                <div class="result">
+                    <div class="score">0</div>
+                    <div class="timer"><span class="curr"></span></div>
+                </div>
+				<span class="main">main</span>
+				<!-- <span class="reset">RESET</span> -->
+			</div>
+            <div class="overlay">
+                <div class="peaches"></div>
+            </div>
+			<canvas></canvas>
+			<div class="blur">
+				<div class="final_score">
+					<div class="score_wrap">
+						<img src="img/peach_end.png" alt="">
+						<div class="score_num_wrap">
+							<span>SCORE</span><br>
+							<span class="final_score_num"></span>
+						</div>
+					</div>
+					<div class="best_score"><span>BEST : </span><span class="new"></span></div>
+				</div>
+				<div class="btns">
+					<div class="replay"><span>REPLAY</span></div>
+					<div class="back_to_main"><span>BACK to MAIN</span></div>
+                    <div class="reward" style="margin-top: 10px;">
+						<span>REWARD</span>
+						<div class="loading-sprite" alt=""></div>
+					</div>
+				</div>
+				<!-- <span class="local_clear">Reset Best Score</span> -->
+			</div>
+		</div>
+		<script src="js/script.js"></script>
+	</body>
+</html>

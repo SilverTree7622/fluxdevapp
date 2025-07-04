@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<title>Peach Game</title>
+		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+        <script type="text/javascript" src="utils/background.js"></script>
+        <script type="text/javascript" src="utils/platform.js"></script>
+        <script type="text/javascript" src="utils/monetize.js"></script>
+        <script type="text/javascript" src="utils/internet.js"></script>
+        <script type="text/javascript" src="utils/display.js"></script>
+		<!-- <div class="orientation-message">
+			<p>이 게임은 세로 모드에 최적화되어 있습니다.<br>화면을 세로로 돌려주세요.</p>
+		</div> -->
+		<div class="bg">
+			<div class="wrapper">
+				<div class="title_wrap"><img src="img/title.png" alt=""></div>
+				<div class="bg_img_wrap wrap1"><img src="img/flower1.png" alt=""></div>
+				<div class="bg_img_wrap wrap2"><img src="img/flower1.png" alt=""></div>
+				<div class="btn_wrap">
+					<div class="play_btn">
+						<img src="img/peach.png" alt="">
+						<span>Play</span>
+					</div>
+					<!-- <div class="howtoplay_btn">
+						<img src="img/peach.png" alt="">
+						<span>How to<br>Play</span>
+					</div> -->
+				</div>
+			</div>
+			<!-- <div class="howtoplay">
+				<h2>How to Play</h2>
+				<img src="img/howtoplay.jpg" alt="">
+				<button type="button" class="close_btn">
+					<span></span>
+					<span></span>
+				</button>
+				<a href="play.html" class="start_btn"><span>PLAY</span></a>
+			</div> -->
+		</div>
+		<script>
+			const playBtn=document.querySelector('.play_btn');
+			const howtoplayBtn=document.querySelector('.howtoplay_btn');
+			const howtoplayWrap=document.querySelector('.howtoplay');
+			const closeBtn=document.querySelector('.close_btn');
+            window['UtilPlatform'].sendMsg2Parent('ShowNavFooterPlay');
+			playBtn.addEventListener('click',()=>{
+                window['UtilPlatform'].sendMsg2Parent('HideNavFooterPlay');
+				window.location.href='play.html';
+			});
+			// howtoplayBtn.addEventListener('click',()=>{
+			// 	howtoplayWrap.classList.add('active');
+			// });
+			// closeBtn.addEventListener('click',()=>{
+			// 	howtoplayWrap.classList.remove('active');
+			// });
+		</script>
+	</body>
+</html>

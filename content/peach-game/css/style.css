@@ -1,0 +1,435 @@
+@charset 'utf-8';
+
+@font-face {
+	font-family: Fruit Days;
+	src: url('../data/Fruit_Days.woff') format('woff');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'MaplestoryOTFBold';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+/* @import url('https://fonts.cdnfonts.com/css/fruit-days'); */
+html, body{ width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; }
+body, div, p, h2, button{ margin: 0; padding: 0; }
+a{ text-decoration: none; }
+body{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+img{
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-use-select: none;
+	user-select: none;
+	-webkit-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+}
+.bg{
+	width: 100vw; height: 100vh;
+	border-radius: 0;
+	background: url('../img/bg_frame.jpg') center center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+}
+
+/* index.html */
+@keyframes hoverAni{
+	0%{ transform: rotate(0deg); }
+	20%{ transform: rotate(-20deg); }
+	40%{ transform: rotate(20deg); }
+	60%{ transform: rotate(-10deg); }
+	80%{ transform: rotate(10deg); }
+	100%{ transform: rotate(0deg); }
+}
+@keyframes fadeIn{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+.wrapper{
+	width: 100%; height: 100%;
+	padding: 20px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background: rgba(255, 255, 255, 0.9);
+}
+.title_wrap{
+	width: 80%;
+	max-width: 400px;
+	position: relative;
+	top: 10%;
+	left: auto;
+	margin: 0 auto;
+}
+.title_wrap img {
+	width: 100%;
+	height: auto;
+}
+.bg_img_wrap{
+	width: 150px;
+	position: absolute;
+}
+.bg_img_wrap>img{
+	width: 100%; height: auto;
+	position: absolute;
+}
+.wrap1{ left: -20px; bottom: 20%; }
+.wrap1>img{ bottom: 0; }
+.wrap2{ right: -20px; top: 20%; }
+.wrap2>img{
+	top: -20px;
+	transform-origin: right bottom;
+	transform: scaleX(-1) rotate(90deg);
+}
+.btn_wrap{
+	width: 100%;
+	position: relative;
+	left: auto;
+	bottom: 15%;
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+}
+.btn_wrap>div{ position: relative; cursor: pointer; }
+.btn_wrap>div>span, .howtoplay>.start_btn>span{
+	width: 100%;
+	position: absolute; left: 2%; top: 50%;
+	transform: translateY(-40%);
+	text-align: center;
+	font-family: 'Fruit Days', sans-serif;
+	font-size: 26px; color: #fff;
+}
+.btn_wrap>.play_btn>span{ font-size: 38px; }
+.play_btn, .howtoplay_btn{ transform: scale(0.9); }
+.play_btn:hover, .howtoplay_btn:hover, .howtoplay>.start_btn:hover{
+	animation: hoverAni .4s ease-out 0s 1 alternate both;
+}
+.howtoplay{
+	width: 800px; height: 600px;
+	padding: 30px; box-sizing: border-box;
+	position: absolute; left: 50%; top: 50%; z-index: 2;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	visibility: hidden; opacity: 0; transition: opacity .4s;
+	position: relative;
+}
+.howtoplay>h2{
+	font-family: 'Fruit Days', sans-serif;
+	font-size: 30px; color: #454545;
+	margin-bottom: 20px;
+}
+.howtoplay>.close_btn{
+	width: 32px; height: 32px;
+	position: absolute; right: 30px; top: 30px;
+	background: transparent; border: none;
+	cursor: pointer;
+}
+.howtoplay>.close_btn>span{
+	position: absolute; left: 50%; top: 50%;
+	width: 3px; height: 100%;
+	background: #555;
+}
+.howtoplay>.close_btn>span:nth-of-type(1){
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+.howtoplay>.close_btn>span:nth-of-type(2){
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+.howtoplay>.start_btn{
+	width: 90px; height: 90px;
+	position: absolute; right: 20px; bottom: 20px;
+	background: url('../img/peach.png') no-repeat;
+	background-size: cover;
+}
+.howtoplay>.start_btn>span{ font-size: 20px; }
+.howtoplay.active{ visibility: visible; opacity: 1; transition: opacity .4s; }
+
+/* play.html */
+.overlay {
+    width: 360px; /* 기본값 - JavaScript에서 동적으로 조절됨 */
+    height: 640px; /* 기본값 - JavaScript에서 동적으로 조절됨 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    box-sizing: border-box;
+    background: url('../img/bg_play.gif');
+    background-size: cover; /* 배경 이미지 크기 조절 추가 */
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: auto;
+}
+.main, .reset{
+	display: block;
+	width: 80px; height: 25px;
+	position: absolute; bottom: 15px;
+	background-image: linear-gradient(to right, #80d4ff, #3cbafa, #667eea, #764ba2);
+	background-size: 300% 100%;
+	box-shadow: 0 4px 15px 0 rgba(104, 202, 252, 0.75);
+	text-align: center; line-height: 25px;
+	font-family: 'Fruit Days', sans-serif;
+	font-size: 18px; color: #fff;
+	cursor: pointer;
+	transition: all .4s ease-in-out;
+	z-index: 30;
+	-webkit-tap-highlight-color: transparent;
+	touch-action: manipulation;
+}
+.main{ right: 40px; }
+/* .main{ right: 140px; } */
+.reset{ right: 40px; }
+.main:hover, .reset:hover, .main:active, .reset:active{
+	background-position: 100% 0;
+	transition: all .4s ease-in-out;
+}
+.peaches {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.img_wrap {
+    position: absolute;
+}
+.img_wrap>p{
+	width: 100%; height: 100%;
+	position: absolute; left: 0; top: 0; z-index: 1;
+	background: url('../img/peach0.png') no-repeat center center;
+	background-size: contain;
+}
+.img_wrap>span{
+	position: absolute; left: 50%; top: 50%; z-index: 10;
+	transform: translate(-30%, -45%);
+	font-weight: bold; color: #fff;
+	font-family: 'MaplestoryOTFBold', sans-serif;
+}
+.result{
+	position: fixed;
+    top: 0px;
+	left: 20px;
+	right: 20px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	z-index: 15;
+}
+.result>.score{
+	font-family: 'MaplestoryOTFBold', sans-serif;
+	font-size: 24px; color: #555;
+	margin-bottom: 10px;
+}
+.result>.timer{
+	width: calc(100%);  /* 양쪽 여백 20px씩 */
+	height: 16px;
+	border: 1px solid #f7bed1;
+	background: #fff;
+	position: relative;
+	margin-bottom: 20px;
+	opacity: 0.6;
+}
+.result>.timer>.curr{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: #f7bed1;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: width 1s linear;
+}
+canvas{
+	/* position: absolute; left: 50%; top: 50%; z-index: 10;
+	transform: translate(-50%, -50%); */
+}
+.blur{
+	width: 360px; height: 640px;
+	padding: 30px; box-sizing: border-box;
+	position: absolute; left: 50%; top: 50%; z-index: 20;
+	transform: translate(-50%, -50%);
+	backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+	visibility: hidden;
+	display: flex; flex-flow: column wrap; justify-content: center; align-items: center;
+	font-family: 'MaplestoryOTFBold', sans-serif; color: #fff;
+}
+.score_wrap{
+	position: relative;
+	opacity: 0; transform: translateY(-50px);
+	transition: all .8s;
+}
+.score_num_wrap{
+	position: absolute; left: 50%; top: 50%;
+	transform: translate(-45%, -40%);
+	text-align: center;
+	font-size: 30px;
+}
+.final_score_num{ font-size: 50px; }
+.best_score{
+	text-align: center; color: #555;
+	opacity: 0;
+}
+.btns{
+	margin-top: 40px;
+	opacity: 0; transform: translateY(50px);
+	transition: all 0.8s;
+	z-index: 30;
+}
+.btns>div{
+	width: 200px; height: 40px;
+	text-align: center; line-height: 40px;
+	background: #ad9beb;
+	transform: rotate(0deg);
+	cursor: pointer;
+	position: relative;
+	z-index: 30;
+	-webkit-tap-highlight-color: transparent;
+	touch-action: manipulation;
+}
+.btns>div::before, .btns>div::after{
+	display: block;
+	content: '';
+	position: absolute;
+	width: calc(0% - 6px); height: calc(0% - 6px);
+	border: 2px solid transparent;
+	transition: all 0.2s ease;
+}
+.btns>div::after{ bottom: 0; right: 0; }
+.btns>div::before{ top: 0; left: 0; }
+.btns>div:hover::after, .btns>div:hover::before{
+	width: calc(100% - 4px); height: calc(100% - 4px);
+}
+.btns>div:hover::after{
+	border-top-color: transparent;
+	border-left-color: transparent;
+	border-bottom-color: #fff;
+	border-right-color: #fff;
+}
+.btns>div:hover::before{
+	border-top-color: #fff;
+	border-left-color: #fff;
+	border-bottom-color: transparent;
+	border-right-color: transparent;
+}
+.replay{ margin-bottom: 10px; }
+.local_clear{
+	display: block;
+	width: 120px; height: 20px;
+	position: absolute; right: 20px; bottom: 20px;
+	border: 1px solid #555;
+	font-family: 'MaplestoryOTFBold', sans-serif;
+	text-align: center; line-height: 20px;
+	font-size: 12px; color: #555;
+	transition: all .2s;
+	cursor: pointer;
+}
+.local_clear:hover{
+	background: #555; color: #fff;
+}
+.blur.active{ visibility: visible; }
+.blur.active .score_wrap, .blur.active .btns{
+	opacity: 1; transform: translateY(0px);
+}
+.blur.active .best_score{ animation: fadeIn 1s ease 0s 1 both; }
+
+/* 기존 CSS 코드 위에 추가 */
+.orientation-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.orientation-message p {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+/* 가로 모드일 때 경고 메시지 표시 */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .orientation-message {
+        display: flex;
+    }
+    
+    .wrapper {
+        display: none;
+    }
+    
+    .howtoplay {
+        display: none;
+    }
+}
+
+/* 세로 모드 반응형 스타일 */
+@media screen and (max-width: 768px) {
+    .title_wrap {
+        width: 70%;
+        top: 15%;
+    }
+    
+    .bg_img_wrap {
+        width: 120px;
+    }
+    
+    .btn_wrap {
+        bottom: 20%;
+    }
+    
+    .play_btn {
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title_wrap {
+        width: 80%;
+        top: 12%;
+    }
+    
+    .bg_img_wrap {
+        width: 100px;
+    }
+    
+    .wrap1 {
+        left: -10px;
+    }
+    
+    .wrap2 {
+        right: -10px;
+    }
+    
+    .btn_wrap {
+        bottom: 25%;
+    }
+    
+    .play_btn {
+        transform: scale(0.7);
+    }
+    
+    .howtoplay {
+        width: 90%;
+        padding: 15px;
+    }
+}
