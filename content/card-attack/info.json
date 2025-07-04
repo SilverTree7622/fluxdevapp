@@ -1,0 +1,10 @@
+{
+  "isHidden": false,
+  "genres": [],
+  "screen": "PORTRAIT",
+  "tagTypes": [
+    "NEW", "EVENT"
+  ],
+  "framework": "createjs",
+  "id": "d5dfc051-9bfa-49d8-b1a7-03f1913d6c6a"
+}
