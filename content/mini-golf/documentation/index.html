@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+	<title>Mini Golf - An HTML Mini Golf Game for Mobile and Desktop</title>
+ 	<meta name="description" content="An HTML5 mini golf game. High resolution, responsive, cross-browser, mouse or touch, and built with Phaser!">
+	<meta name="author" content="BitwiseCreative">
+	<meta name="copyright" content="BitwiseCreative">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/documenter_style.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+	
+	<style>
+		html, body{background-color:#EEEEEE;color:#383838;}
+		h1,h2,h3,h4,h5,h6{color:#383838;}
+		section table{background-color:#EEEEEE;}
+		::-moz-selection{background:#333636;color:#00B3FF;}
+		::selection{background:#333636;color:#00B3FF;}
+		a.brand{background-image:url(assets/img/logo.png);}
+		a, a:hover, a:active{color:#008EC2;}
+		hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+		div.navbar-inner, .navbar .nav li ul{background:#343838;color:#FFFFFF;}
+		a.btn-navbar{background:#343838;color:#FFFFFF;}
+		.navbar .nav li a{color:#FFFFFF;text-shadow:1px 1px 0px #494F4F;}
+		.navbar .nav li a:hover, .navbar .nav li.active a{text-shadow:none;}
+		div.navbar-inner ul{}
+		.marketing-byline{color:#aaaaaa;}
+		.navbar .nav > li a{color:#FFFFFF;}
+		.navbar .nav > li a:hover, a.btn-navbar:hover{background:#333636;color:#00B3FF;}
+		.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active{background-color:#333636;color:#00B3FF;}
+		.navbar .nav li ul li a:hover{background:#333636;color:#00B3FF;}
+		.navbar .nav li ul li a:active{background:#333636;color:#00B3FF;}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088D6, #0074CC);
+			  background-image: -ms-linear-gradient(top, #0088D6, #0074CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088D6%, from(#343838), to(#0074CC));
+			  background-image: -webkit-linear-gradient(top, #0088D6, #0074CC);
+			  background-image: -o-linear-gradient(top, #0088D6, #0074CC);
+			  background-image: linear-gradient(top, #0088D6, #0074CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088D6', endColorstr='#0074CC', GradientType=0);
+			  border-color: #0074CC #0074CC #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  background-color: #0074CC;
+		}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+	
+	
+    </head>
+    
+<body class="documenter-project-alien-invaders" data-spy="scroll" id="top">
+
+<!-- Documentation Navbar -->
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> 
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
+			<a class="brand" href="#">Mini Golf - An HTML Mini Golf Game for Mobile and Desktop</a>
+			<div class="nav-collapse">
+			<ul class="nav">
+					
+			<li><a href="#quick_start" title="Quick Start">Quick Start</a></li>
+			<li><a href="#assets" title="Assets">Assets</a></li>
+			<li><a href="#javascript" title="Javascript">Javascript</a></li>
+			<li><a href="#configuration" title="Configuration">Configuration</a></li>
+            <li><a href="#crafting" title="Level Crafting Guide">Level Crafting Guide</a></li>
+			<li><a href="#support" title="Support">Support</a></li>
+
+			</ul>
+			</div>
+		</div>
+	</div>
+</div> <!-- End of Navbar -->
+
+<!-- Main Container Beginning -->			
+			
+<div class="container" id="documenter_content">
+    
+	<div id="documenter-cover">
+	<div class="masthead">
+	    <h1>Mini Golf</h1>
+        <h3>An HTML Mini Golf Game for Mobile and Desktop</h3>
+	    <p class="download-info">
+			<a href="#quick_start" class="btn btn-primary btn-large">Quick Start</a>
+            <a href="#assets" class="btn btn-large">Assets</a>
+            <a href="#javascript" class="btn btn-large">Javascript</a>
+            <a href="#configuration" class="btn btn-large">Configuration</a>
+            <a href="#crafting" class="btn btn-large">Level Crafting Guide</a>
+            <a href="#support" class="btn btn-large">Support</a> 
+		</p>
+		
+        <p><img src="assets/img/preview.jpg" alt="" /></p>
+        <p><strong>Thank you for purchasing Mini Golf!</strong></p>
+        <p>An easy to play HTML5 mini golf game. Includes all 18 holes, and a level crafting guide.</p>
+        <p>Keeps track of your personal best score for each game type (Front nine, Back Nine, and Full Course (18 Holes)).</p>
+        
+	    <ul class="marketing-byline">
+			<li>created: 07/27/2014</li>
+			<li>latest update: 07/27/2014</li>
+			<li>by: BitwiseCreative</li>
+			<li>Contact: <a href="http://codecanyon.net/user/BitwiseCreative">http://codecanyon.net/user/BitwiseCreative</a></li>
+		</ul>
+        
+	</div> <!-- masthead -->
+	
+    <!--
+   <div id="intro">
+    <p class="highlight hero-unit">Thank you for purchasing Word Up!!</p>
+   </div>
+   -->
+   
+	</div>
+      
+  <section id="quick_start">
+	<div class="page-header"><h3>Quick Start</h3><hr class="notop"></div>
+<p>
+	This game is ready to go. Simply drop this folder (&quot;mini_golf&quot;) onto a server, and browse to it!</p>
+<p>
+	For example, if you have a &quot;games&quot; directory on your site, and upload the &quot;mini_golf&quot; folder there, you&#39;d play it at:</p>
+<p>
+	http://www.example.com/games/mini_golf</p>
+<p>
+	&nbsp;</p>
+<p>
+	<em><strong>Note:</strong> Sometimes trying to run HTML5 games from a local source (i.e., just opening the index.html file from your desktop) will not work properly, as browsers lock out some features for security purposes.</em></p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="assets">
+	<div class="page-header"><h3>Assets</h3><hr class="notop"></div>
+<p><strong>Fonts</strong></p>
+<p>
+	The title font used for this game is called "Risque", and is commercial use friendly:
+<ul>
+	<li>
+		<a href="http://www.fontsquirrel.com/fonts/risque" target="_blank">Risque</a></li>
+</ul>
+<p>
+	The in-game font for score, swings, etc. is defined as: Arial, "Helvetica Neue", Helvetica, sans-serif<br />
+    (You can change this if you wish by editing the t_font variable in /js/Game.js)</p>
+<p>
+	&nbsp;</p>
+<p><strong>Images / Sprites</strong></p>
+<p>
+	Game screen images, buttons, and other misc. images are located in the /img folder.</p>
+<p>
+	The game sprites (ball, putter, obstacles) are located in the /img/sprites folder.</p>
+<p>
+	The score display images (Hole in One, Birdie, Par, etc.) located in the /img/score_text folder.</p>    
+    
+    <p>The PSD files for all images are located in the /img/_PSD folder</p>
+<p>
+	&nbsp;</p>
+<p><strong>Sound / Audio</strong></p>
+<p>
+	All of the game sound effects are located in the /audio folder.</p>
+<p>
+	Both .mp3 and .ogg files are required for cross-browser compatibility.</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="javascript">
+	<div class="page-header"><h3>Javascript</h3><hr class="notop"></div>
+<p>
+	This game uses the <a href="http://phaser.io/">Phaser HTML5 Game Framework</a>. It&#39;s a solid and actively developed HTML5 game framework that has a virbrant and excited community behind it. The frosting on the cake is that it&#39;s open source, and the cherry on top is that is uses the MIT license.</p>
+<p>
+	Feel free to research this framework at: <a href="http://phaser.io">http://phaser.io</a></p>
+<p>
+	Here is the Phaser documentation &amp; examples (in case you&#39;re interested): <a href="http://docs.phaser.io/">http://docs.phaser.io/</a> &amp; <a href="http://examples.phaser.io/">http://examples.phaser.io/ </a></p>
+<p>
+	&nbsp;</p>
+<p>
+	All of the Javascript files are located in the /js folder.<br>
+	&nbsp;</p>
+<p>
+	<strong>Phaser Framework</strong><br>
+	Both of these files are required for the game to run. They should be left alone.</p>
+<ul>
+	<li>
+		phaser.min.js</li>
+	<li>
+		phaser.map<br>
+		&nbsp;</li>
+</ul>
+<p>
+	<strong>Game Files</strong><br>
+</p>
+<ul>
+	<li>
+		Boot.js
+		<ul>
+			<li>
+				Sets some display preferences, and gets the preloading text ready.</li>
+		</ul>
+	</li>
+	<li>
+		Preload.js
+		<ul>
+			<li>
+				Preloads all of the game assets.</li>
+		</ul>
+	</li>
+	<li>
+		MainMenu.js
+		<ul>
+			<li>
+				The &quot;Main Menu&quot; screen.</li>
+		</ul>
+	</li>
+	<li>
+		Game.js
+		<ul>
+			<li>
+				The main game.</li>
+		</ul>
+	</li>
+	<li>
+		GameOver.js
+		<ul>
+			<li>
+				The &quot;Game Over&quot; screen.</li>
+		</ul>
+	</li>
+</ul>
+<p>
+	<strong>jQuery</strong><br>
+	I&#39;ve found it&#39;s good practice to have this library available. It&#39;s only used here to launch the game once the DOM has been loaded. If you&#39;d like to remove it, and don&#39;t know how, please feel free to contact me (see <strong>Support</strong> section).</p>
+</section>
+<section id="configuration">
+	<div class="page-header"><h3>Configuration</h3><hr class="notop"></div>
+<p>
+	It took quite a bit of tweaking to get the gameplay and physics working just right. Therefore, besides swapping graphics out, there isn't much to be offered in terms of configuration (except, crafting your own levels (see the next section!)).</p>
+<p>
+	There are just a few configuration variables located at the top of the Game.js file.</p>
+<p>
+	It looks like this:</p>
+<pre class="prettyprint lang-js linenums">
+        ///////////////////////////////////////////////////////////////////////
+        // CONFIGS
+        par = [3, 4, 4, 5, 3, 5, 4, 5, 4, 3, 4, 5, 3, 4, 5, 3, 4, 5];
+
+        holeCount = 18;
+        if (gameType &lt; 3) {
+            holeCount = 9;
+        }
+
+        // If true, the setup putter will always appear in the same place,
+        // otherwise it will always be near the ball.
+        putterSetupSamePosition = false;
+
+        // Obstacle Motion Speed Settings
+        obRotateSpeed = 15;
+        obMoveSpeed = 60;</pre>
+<p>
+	&nbsp;</p>
+<p>The par array sets the par for each hole.</p>
+<p>The holeCount variable sets how many holes there are to be played (i.e., 18 for the full course, or 9 if the Front Nine or Back Nine options are selected).</p>
+<p>putterSetupSamePosition set to true will reload the putter near the bottom of the screen at each setup. Otherwise (as currently false) will reload near the ball (I've personally found this to be much better, but left the option available).</p>
+<p>The obstacle speed settings dictate how fast the moving obstacles move.</p>
+</section>
+<section id="crafting">
+	<div class="page-header"><h3>Level Crafting Guide</h3><hr class="notop"></div>
+<p>
+	And now for the fun part! How to make your own levels! (I know they're actually called "holes", but to avoid confusion, I'll just be referring to them as "levels"...)</p>
+    
+    <p>Most of the work will be done in Game.js. If you want to get fancy, you'll be creating new obstacle graphics and physics polygons as well. And if you want to get really fancy, well, you probably don't need this guide...</p>
+
+    <p>The first thing I'd like to mention is <strong>debug mode</strong>. Turning it on will overlay the physics collision polygons/circles, and show some debug text. The debug text can be helpful for obstacle placement. Simply set the debugging var (in Game.js, line 187) to true.</p>
+    
+    <p>Starting simple... if you just want to change the par setting for a level, you can do that in the par array in the CONFIGS section at the top of Game.js.</p>
+    
+    <p>The level settings are located just under the CONFIGS area. It looks like this:</p>
+    
+    <pre class="prettyprint lang-js linenums">
+        // Hole (level) Data
+        //  Set hole and ball initial positions
+        //  Set construct methods for each level (destruct is handled automatically as long as all
+        //  obstacles are included in the "ob" array).
+        holes = {
+            'h1': {
+                'holeX': 320,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': null
+            },
+            'h2': {
+                'holeX': 320,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c2
+            },
+            'h3': {
+                'holeX': 320,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c3
+            },
+            'h4': {
+                'holeX': 320,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c4
+            },
+            'h5': {
+                'holeX': 514,
+                'holeY': 740,
+                'ballX': 120,
+                'ballY': 740,
+                'construct': this.c5
+            },
+            'h6': {
+                'holeX': 320,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c6
+            },
+            'h7': {
+                'holeX': 320,
+                'holeY': 480,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c7
+            },
+            'h8': {
+                'holeX': 320,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c8
+            },
+            'h9': {
+                'holeX': 500,
+                'holeY': 182,
+                'ballX': 230,
+                'ballY': 780,
+                'construct': this.c9
+            },
+            'h10': {
+                'holeX': 500,
+                'holeY': 145,
+                'ballX': 140,
+                'ballY': 815,
+                'construct': null
+            },
+            'h11': {
+                'holeX': 320,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c11
+            },
+            'h12': {
+                'holeX': 320,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c12
+            },
+            'h13': {
+                'holeX': 320,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c13
+            },
+            'h14': {
+                'holeX': 384,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c14
+            },
+            'h15': {
+                'holeX': 320,
+                'holeY': 200,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c15
+            },
+            'h16': {
+                'holeX': 320,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c16
+            },
+            'h17': {
+                'holeX': 320,
+                'holeY': 140,
+                'ballX': 320,
+                'ballY': 780,
+                'construct': this.c17
+            },
+            'h18': {
+                'holeX': 275,
+                'holeY': 135,
+                'ballX': 320,
+                'ballY': 820,
+                'construct': this.c18
+            }
+        };    
+    </pre>
+    
+    <p>This data contains the locations of the ball and hole, and the level "construct" (we'll go over that in a bit). You can choose to omit a contruct by setting this to null (see levels 1 and 10).</p>
+    
+    <h3>Level Constructs</h3>
+    <p>Building levels with the included obstacles is fairly easy. Take a look at Game.js, around line 722. You should see the level constructors header, followed by all the level constructors.</p>
+    <p>Here's the level 2 construct:</p>
+    <pre class="prettyprint lang-js linenums">
+    c2: function() {
+        this.addOb('bar_long', centerX, centerY, 'rotateCW');
+    },
+    </pre>
+
+    <p>Yep, that's it. Puts a rotating long bar in the middle of the level. Refer to the other level constructors to get ideas, or to see how they work.</p>
+    <p>Let's go over the "this.addOb" method.</p>
+    <p>It takes three required parameters, and two optional ones:</p>
+    <ul>
+    <li><strong>name</strong> - The name of the obstacle. Here's the list (note the maze is a special case designed solely for level 18):<ul>
+        <li>wedge_red</li>
+        <li>wedge_blue</li>
+        <li>wedge_yellow</li>
+        <li>wedge_purple</li>
+        <li>corner_large</li>
+        <li>corner_small</li>
+        <li>bar_tiny</li>
+        <li>bar_small</li>
+        <li>bar_medium</li>
+        <li>bar_long</li>
+        <li>bar_full</li>
+        <li>maze</li>
+        <li>circle</li>
+    </ul></li>
+    <li><strong>x</strong> - Starting X location of the obstacle (Note: this physics engine sets the anchor to the center of the sprite, not in the usual top left corner)</li>
+    <li><strong>y</strong> - Starting Y location of the obstacle (Same note as above)</li>
+    <li><strong>motion</strong> - (Optional) the type of motion to give an obstacle. Here's the list:
+    <ul>
+        <li>static (default value, doesn't move)</li>
+        <li>rotateCW (rotates clockwise)</li>
+        <li>rotateCCW (rotates counter clockwise)</li>
+        <li>rotateFast (rotates five times faster clockwise)</li>
+        <li>x (moves side to side)</li>
+        <li>y (moves up and down)</li>
+    </ul></li>
+    <li><strong>rotation</strong> - (Optional) The rotation, in radians, of the obstacle (note, if you need to set the rotation, but not the motion, simply set the motion to 'static')<ul>
+        <li><strong>Common Settings for Rotation:</strong></li>
+        <li>90 degrees = 1.57</li>
+        <li>180 degrees = 3.14</li>
+        <li>270 degrees = 4.71</li>
+    </ul></li>
+    <p>For testing your levels, you could either just use the level 1 slot data for temporary building, or add a
+    temporary line of code in Game.js right above the "Init Starting Hole" comment (line 291) to force load the level you're working on. Example:</p>
+    <pre class="prettyprint lang-js linenums">
+    // Working on level 6
+    level = 5;
+    
+    // Init Starting Hole
+    this.nextHole();
+    </pre>    
+    <hr />
+    <h3>Custom Obstacles</h3>
+    <p>If you want to build your own obstacles, you'll need to do four things:</p>
+    <ol>
+        <li>Create the graphic (transparent PNG)</li>
+        <li>Add it to the obstacles section in the preloader (Preloader.js line 23). The name you give it here will be the name you use to call it (i.e., "wedge_red")</li>
+        <li>Setup the polygon data in /img/sprites/poly.json (it is possible to avoid this step, but your graphic would have to be a circle or a rectangle, and have hard edges (no shadows). Also, it would mean the handler you add for it in addOb must not be included in the list that calls for the polygon data.)</li>
+        <li>Add a handler for it in the addOb method in Game.js (see line 594)</li>
+    </ol>
+    <p>After that, you can call them like the other obstacles. building the poly.json data can be a bit simpler by using a tool, such as <a href="https://www.codeandweb.com/physicseditor">PhysicsEditor</a></p>
+
+</section>
+<section id="support">
+	<div class="page-header"><h3>Support</h3><hr class="notop"></div>
+<p>
+	If you have any questions or comments about the game, please let me know.</p>
+<p>
+	You can contact me through my <a href="http://codecanyon.net/user/BitwiseCreative">Envato profile</a> (send a message).</p>
+<p>
+	Or, <a href="http://bitwisecreative.com/contact.html">send me a message from my website contact page</a>.</p>
+<p>
+	Thank you again for purchasing Mini Golf! <strong>Enjoy!</strong></p>
+<p>
+	&nbsp;</p>
+<p>
+	-Bitwise Creative</p>
+</section>
+
+
+
+    <hr />
+
+<footer>
+    <p>Copyright BitwiseCreative 2014 - Made with the <a href="http://rxa.li/documenter">Documenter v2.0</a></p>
+</footer>
+
+</div><!-- /container --> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script>document.createElement('section');var duration='500',easing='swing';</script>
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/jquery.scrollTo.js"></script>
+<script src="assets/js/jquery.easing.js"></script>
+<script src="assets/js/scripts.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-min.js"></script> 
+</body>
+</html>

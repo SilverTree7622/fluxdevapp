@@ -1,0 +1,10 @@
+{
+  "isHidden": false,
+  "genres": [],
+  "screen": "PORTRAIT",
+  "tagTypes": [
+    "NEW", "EVENT"
+  ],
+  "framework": "phaser3",
+  "id": "00d8e00c-7243-43a3-aff0-0e5efecf212e"
+}

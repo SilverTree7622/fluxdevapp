@@ -1,0 +1,11 @@
+{
+  "isHidden": false,
+  "genres": [],
+  "screen": "LANDSCAPE",
+  "tagTypes": [
+    "NEW",
+    "EVENT"
+  ],
+  "framework": "construct2",
+  "id": "dcc5fcb8-81e0-49bf-927d-074b0e597d45"
+}
