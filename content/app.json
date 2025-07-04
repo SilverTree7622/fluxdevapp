@@ -1,0 +1,59 @@
+{
+  "app": {
+    "version": "1.0.0",
+    "icon": "",
+    "description": "offline mini games platform",
+    "orientation": "portrait",
+    "content": "index.html",
+    "oauth": {
+      "google": false
+    },
+    "customAppName": "Flux Games",
+    "admob": {
+      "and": {
+        "appId": "ca-app-pub-2649247683134200~4871348061",
+        "openId": "ca-app-pub-3940256099942544/9257395921",
+        "bannerId": [
+          "ca-app-pub-2649247683134200/4060445800",
+          "ca-app-pub-2649247683134200/7247306337"
+        ],
+        "interstitialId": "ca-app-pub-3940256099942544/1033173712",
+        "interstitialVideoId": "ca-app-pub-3940256099942544/8691691433",
+        "rewardedId": [
+          "ca-app-pub-2649247683134200/4909998207",
+          "ca-app-pub-2649247683134200/6677564342"
+        ],
+        "rewardedInterstitialId": "ca-app-pub-3940256099942544/5354046379",
+        "nativeId": "ca-app-pub-3940256099942544/2247696110",
+        "nativeAdvancedId": "ca-app-pub-3940256099942544/1044960115"
+      },
+      "ios": {
+        "appId": "ca-app-pub-2649247683134200~4871348061",
+        "openId": "ca-app-pub-3940256099942544/9257395921",
+        "bannerId": "ca-app-pub-2649247683134200/4060445800",
+        "interstitialId": "ca-app-pub-3940256099942544/1033173712",
+        "interstitialVideoId": "ca-app-pub-3940256099942544/8691691433",
+        "rewardedId": "ca-app-pub-2649247683134200/4909998207",
+        "rewardedInterstitialId": "ca-app-pub-3940256099942544/5354046379",
+        "nativeId": "ca-app-pub-3940256099942544/2247696110",
+        "nativeAdvancedId": "ca-app-pub-3940256099942544/1044960115"
+      }
+    }
+  },
+  "splashConfig": {
+    "icon": "",
+    "backgroundColor": "#181818",
+    "autoHide": false,
+    "delay": 6000
+  },
+  "fullscreen": true,
+  "useAdmob": true,
+  "enableCamera": false,
+  "useNavigationBar": false,
+  "useShare": true,
+  "useSwipe": false,
+  "debugMode": true,
+  "android": {},
+  "ios": {},
+  "electron": {}
+}
