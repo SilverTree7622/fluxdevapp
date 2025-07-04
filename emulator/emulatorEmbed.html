@@ -1,0 +1,181 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <head>
+        <!--HTML file auto generated using EmulatorJS codehelper-->
+    </head>
+
+    <body style="width: 100%; height: 100%; text-align: center; margin: 0; padding: 0; background-color: #181818;">
+        <div style="max-width:100%; max-height:100%; margin: auto;">
+            <div id="game"></div>
+        </div>
+        <script>
+            // http://127.0.0.1:9999/emulatorEmbed.html?core=arcade&gameName=nbb&gameId=1&gameUrl=.%2F123456789_nbb%2Fservice%2Fnbbatman.zip
+            // http://127.0.0.1:9999/emulatorEmbed.html?core=arcade&gameName=tengai_arcade&gameId=1&gameUrl=.%2F123456789_nbb%2Fservice%2Ftengai.zip
+            // gameurl https://d3f8uvo0sihrzi.cloudfront.net%2F1704724398772_tengai_arcade%2Fservice%2Ftengai.zip
+            // arrange query params
+            const paramsRaw = new URLSearchParams(window.location.search);
+            let params = {};
+            for (const value of paramsRaw.keys()) {
+                params[value] = paramsRaw.get(value);
+            }
+            // set emulator config
+            EJS_player = "#game";
+            EJS_core = params.core;
+            EJS_gameName = params.gameName;
+            EJS_color = "#000000";
+            EJS_startOnLoaded = true;
+            EJS_pathtodata = "https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/";
+            EJS_gameUrl = params.gameUrl;
+            EJS_biosUrl = ``;
+            if (params?.core === 'arcade') {
+                EJS_biosUrl = "https://d3f8uvo0sihrzi.cloudfront.net/lib/emulator/arcade.7z";
+            }
+            // default controls
+            EJS_defaultControls = {
+                0: {
+                    0: { 'value': 'f', 'value2': 'BUTTON_2' },                  // x
+                    1: { 'value': 's', 'value2': 'BUTTON_4' },                  // s
+                    2: { 'value': 'shift', 'value2': 'SELECT' },
+                    3: { 'value': 'enter', 'value2': 'START' },
+                    4: { 'value': 'up arrow', 'value2': 'DPAD_UP' },
+                    5: { 'value': 'down arrow', 'value2': 'DPAD_DOWN' },
+                    6: { 'value': 'left arrow', 'value2': 'DPAD_LEFT' },
+                    7: { 'value': 'right arrow', 'value2': 'DPAD_RIGHT' },
+                    8: { 'value': 'd', 'value2': 'BUTTON_1' },                  // z
+                    9: { 'value': 'a', 'value2': 'BUTTON_3' },                  // a
+                    10: { 'value': 'q', 'value2': 'LEFT_TOP_SHOULDER' },
+                    11: { 'value': 'e', 'value2': 'RIGHT_TOP_SHOULDER' },
+                    12: { 'value': 'tab', 'value2': 'LEFT_BOTTOM_SHOULDER' },
+                    13: { 'value': 'r', 'value2': 'RIGHT_BOTTOM_SHOULDER' },
+                    14: { 'value': '', 'value2': 'LEFT_STICK', },
+                    15: { 'value': '', 'value2': 'RIGHT_STICK', },
+                    16: { 'value': 'h', 'value2': 'LEFT_STICK_X:+1' },
+                    17: { 'value': 'b', 'value2': 'LEFT_STICK_X:-1' },
+                    18: { 'value': 'g', 'value2': 'LEFT_STICK_Y:+1' },
+                    19: { 'value': 't', 'value2': 'LEFT_STICK_Y:-1' },
+                    20: { 'value': 'l', 'value2': 'RIGHT_STICK_X:+1' },
+                    21: { 'value': 'j', 'value2': 'RIGHT_STICK_X:-1' },
+                    22: { 'value': 'k', 'value2': 'RIGHT_STICK_Y:+1' },
+                    23: { 'value': 'i', 'value2': 'RIGHT_STICK_Y:-1' },
+                    24: { 'value': '1' },
+                    25: { 'value': '2' },
+                    26: { 'value': '3' },
+                    27: { 'value': 'add' },
+                    28: { 'value': '' },
+                    29: { 'value': 'subtract' },
+                },
+                1: {},
+                2: {},
+                3: {},
+            };
+            // custom controls
+            if (params?.defaultControls) {
+                const customControls = JSON.parse(params.defaultControls);
+                for (const player in EJS_defaultControls) {
+                    for (const item in EJS_defaultControls[player]) {
+                        const customValue = customControls[player][item];
+                        if (customValue === undefined) continue;
+                        if (EJS_defaultControls[player][item] ===  customValue) continue;
+                        EJS_defaultControls[player][item] = customValue;
+                    }
+                }
+            }
+            EJS_ready = () => {
+                if (!window.parent) return;
+                window.parent.postMessage( { state: 'emulator_ready', status: `success` }, '*' );
+            };
+            EJS_onGameStart = () => {
+                if (!window.parent) return;
+                window.parent.postMessage( { state: 'game_ready', status: `success` }, '*' );
+                const element = window.EJS_emulator.elements.parent;
+                function KeyboardController(keys, repeat) {
+                    var timers= {};
+                    document.onkeydown= function(event) {
+                        var key= (event || window.event).keyCode;
+                        if (!(key in keys))
+                            return true;
+                        if (!(key in timers)) {
+                            timers[key]= null;
+                            keys[key]();
+                            if (repeat!==0)
+                                timers[key]= setInterval(keys[key], repeat);
+                        }
+                        return false;
+                    };
+                    document.onkeyup= function(event) {
+                        var key= (event || window.event).keyCode;
+                        if (key in timers) {
+                            if (timers[key]!==null)
+                                clearInterval(timers[key]);
+                            delete timers[key];
+                        }
+                    };
+                    window.onblur= function() {
+                        for (key in timers)
+                            if (timers[key]!==null)
+                                clearInterval(timers[key]);
+                        timers= {};
+                    };
+                }
+                const commonOpt = {
+                    'key': 'f',
+                    'code': 'keyF',
+                    'keyCode': 70,
+                    'which': 70,
+                };
+                if (params?.autoKey && params?.autoKeyCode) {
+                    commonOpt.key = params.autoKey;
+                    commonOpt.code = 'key' + params.autoKey.toUpperCase();
+                    commonOpt.keyCode = params.autoKeyCode;
+                    commonOpt.which = commonOpt.keyCode;
+                }
+                KeyboardController(
+                    {
+                        32: () => {
+                            const kd = new KeyboardEvent( 'keydown', commonOpt );
+                            const ku = new KeyboardEvent( 'keyup', commonOpt );
+                            element.dispatchEvent(kd);
+                            setTimeout(() => {
+                                element.dispatchEvent(ku);
+                            }, 5);
+                        },
+                    },
+                    10
+                );
+            };
+            // emulator netplay config
+            EJS_gameID = undefined;
+            if (params.gameId) {
+                if (typeof params.gameId === 'string') EJS_gameID = JSON.parse(params.gameId);
+                else EJS_gameID = params.gameId;
+            }
+            console.log('EJS_gameID: ', EJS_gameID);
+
+            EJS_oldCores = false;
+            if (params.gameId && params.oldCores) {
+                EJS_oldCores = true;
+            }
+            EJS_Buttons = {
+                playPause: true,
+                restart: true,
+                mute: true,
+                settings: true,
+                fullscreen: false,
+                saveState: false,
+                loadState: false,
+                screenRecord: false,
+                gamepad: true,
+                cheat: false,
+                volume: true,
+                saveSavFiles: false,
+                loadSavFiles: false,
+                quickSave: false,
+                quickLoad: false,
+                screenshot: false,
+                cacheManager: false,
+            };
+        </script>
+        <script src="https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/loader.js"></script>
+    </body>
+</html>

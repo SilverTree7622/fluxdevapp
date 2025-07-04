@@ -1,0 +1,1 @@
+import{S as o,o as a,c as r,z as n,F as s}from"./cyCOdGck.js";const l={};function c(t,e){return a(),r("div",null,[e[0]||(e[0]=n(" layout named layout ")),s(t.$slots,"default")])}const u=o(l,[["render",c]]);export{u as default};

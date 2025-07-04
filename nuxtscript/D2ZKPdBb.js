@@ -1,0 +1,1 @@
+const a={setItem:(e,t)=>{localStorage.setItem(e,JSON.stringify(t))},getItem:e=>JSON.parse(localStorage.getItem(e)??"null"),removeItem:e=>{localStorage.removeItem(e)},clear:()=>{localStorage.clear()}};export{a as U};
